@@ -1,0 +1,18 @@
+-- TNHS CES Phase 13 policy reference.
+-- The Phase 13 role-based policies have already been applied to the configured Supabase project.
+-- This file is intentionally non-executable to avoid accidentally re-creating obsolete
+-- email-hardcoded policies or weakening the current database security.
+--
+-- Current policies are named:
+--   enrollment_records: tnhs_role_select_enrollment_records
+--                       tnhs_role_insert_enrollment_records
+--                       tnhs_role_update_enrollment_records
+--   activity_logs:      tnhs_role_select_activity_logs
+--                       tnhs_role_insert_activity_logs
+--   user_profiles:      user_profiles_admin_select
+--                       user_profiles_admin_manage
+--                       user_profiles_self_select
+--
+-- Role checks are evaluated by public.current_tnhs_role(); missing/inactive profiles fail closed.
+-- See PHASE13_MULTIUSER_REPORT.md for the role matrix and PHASE13_USER_PROVISIONING.sql
+-- for the approved process to add staff accounts. Never put a service-role key in frontend code.
